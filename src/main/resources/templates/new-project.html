@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Document</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <form action="/projects/save" method="POST">
+      <input type="text" placeholder="Project Name">
+
+      <select>
+        <option th:value="NOTSTARTED"> Not Started</option>
+        <option th:value="INPROGRESS"> In Progress</option>
+        <option th:value="COMPLETED"> Completed</option>
+      </select>
+
+      <textarea cols="30" rows="10" placeholder="Enter Project Description"></textarea>
+
+      <button type="submit">Create Project</button>
+    </form>
+  </div>
+</body>
+</html>
