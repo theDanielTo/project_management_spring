@@ -12,7 +12,7 @@ public class Project {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long projectId;
   private String name;
-  private String stage; // ex/ NOTSTARTED, COMPLETED, INPROGRESS, etc.
+  private String stage;
   private String description;
 
   public Project() { }
