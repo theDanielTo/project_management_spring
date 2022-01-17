@@ -38,6 +38,6 @@ public class EmployeeController {
   public String createEmployee(Employee employee, Model model) {
     empRepo.save(employee);
 
-    return "redirect:/employees/new";
+    return "redirect:/employees";
   }
 }
