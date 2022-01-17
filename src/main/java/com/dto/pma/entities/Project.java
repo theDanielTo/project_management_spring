@@ -19,7 +19,7 @@ public class Project {
   private String stage;
   private String description;
 
-  @OneToMany(mappedBy="theProject")
+  @OneToMany(mappedBy="project")
   private List<Employee> employees;
 
   public Project() { }
@@ -53,5 +53,11 @@ public class Project {
   }
   public void setDescription(String description) {
     this.description = description;
+  }
+  public List<Employee> getEmployees() {
+    return employees;
+  }
+  public void setEmployees(List<Employee> employees) {
+    this.employees = employees;
   }
 }
