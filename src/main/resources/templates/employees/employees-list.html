@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="layouts :: html-header" />
+
+<body>
+  <nav th:replace="layouts :: navbar" />
+
+  <div class="container">
+    <h3>Employees Directory</h3>
+    <hr>
+
+    <a th:href="@{/employees/new}" class="btn btn-primary btn-sm mb-3">
+      Add Employee
+    </a>
+
+    <h4> Current Employees </h4>
+    <table class="table table-border table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th> First Name </th>
+          <th> Last Name </th>
+          <th> Email </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="anEmployee : ${employeesList}">
+          <td th:text="${anEmployee.firstName}" />
+          <td th:text="${anEmployee.lastName}" />
+          <td th:text="${anEmployee.email}" />
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.dto.pma.projectmanagementspring;
+package com.dto.pma;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
