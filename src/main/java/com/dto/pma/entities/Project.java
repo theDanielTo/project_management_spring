@@ -1,9 +1,12 @@
 package com.dto.pma.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Project {
@@ -11,9 +14,13 @@ public class Project {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long projectId;
+
   private String name;
   private String stage;
   private String description;
+
+  @OneToMany(mappedBy="theProject")
+  private List<Employee> employees;
 
   public Project() { }
 
