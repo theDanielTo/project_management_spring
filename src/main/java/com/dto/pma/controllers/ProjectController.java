@@ -1,5 +1,7 @@
 package com.dto.pma.controllers;
 
+import java.util.List;
+
 import com.dto.pma.dao.ProjectRepository;
 import com.dto.pma.entities.Project;
 
@@ -15,7 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProjectController {
 
   @Autowired
-  ProjectRepository proRepo;
+  ProjectRepository projRepo;
+
+  @GetMapping
+  public String displayProjectsList(Model model) {
+    List<Project> projects = projRepo.findAll();
+    model.addAttribute("projectsList", projects);
+    return "projects/projects-list";
+  }
 
   @GetMapping("/new")
   public String displayProjectForm(Model model) {
@@ -27,7 +36,7 @@ public class ProjectController {
 
   @PostMapping("/save")
   public String createProject(Project project, Model model) {
-    proRepo.save(project);
+    projRepo.save(project);
 
     // use a redirect to prevent duplicate submissions
     return "redirect:/projects/new";

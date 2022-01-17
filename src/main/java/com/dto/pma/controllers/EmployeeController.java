@@ -1,5 +1,7 @@
 package com.dto.pma.controllers;
 
+import java.util.List;
+
 import com.dto.pma.dao.EmployeeRepository;
 import com.dto.pma.entities.Employee;
 
@@ -16,6 +18,13 @@ public class EmployeeController {
 
   @Autowired
   EmployeeRepository empRepo;
+
+  @GetMapping
+  public String displayProjectsList(Model model) {
+    List<Employee> employees = empRepo.findAll();
+    model.addAttribute("employeesList", employees);
+    return "employees/employees-list";
+  }
 
   @GetMapping("/new")
   public String displayEmployeeForm(Model model) {
