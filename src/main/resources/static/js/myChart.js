@@ -4,7 +4,7 @@ new Chart(document.getElementById('myPieChart'), {
     labels: ['Jan', 'Feb', 'Mar'],
     datasets: [{
       label: 'My First dataset',
-      backgroundColor: ['#3e95ccd', '#8e5ea2', '#3cba9f'],
+      backgroundColor: ['#3e95cd', '#8e5ea2', '#3cba9f'],
       borderColor: 'rgb(255, 99, 132)',
       data: [15, 10, 5],
     }]
