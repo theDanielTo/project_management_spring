@@ -5,7 +5,6 @@ import java.util.List;
 import com.dto.pma.dao.EmployeeRepository;
 import com.dto.pma.dao.ProjectRepository;
 import com.dto.pma.dto.EmployeeProject;
-import com.dto.pma.entities.Employee;
 import com.dto.pma.entities.Project;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +27,7 @@ public class HomeController {
     List<Project> projects = projRepo.findAll();
     model.addAttribute("projectsList", projects);
 
+    // querying the DB for employees
     List<EmployeeProject> employeesProjectCount = empRepo.employeeProjects();
     model.addAttribute("employeesProjectCount", employeesProjectCount);
 
