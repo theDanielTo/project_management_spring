@@ -1,29 +1,32 @@
+let chartDataStr = decodeHthml(chartData);
+let chartJsonArray = JSON.parse(chartDataStr);
+
+let values = chartJsonArray.map(data => data.value);
+let labels = chartJsonArray.map(data => data.label);
+
 new Chart(document.getElementById('myPieChart'), {
-  type: 'pie',
+  type: 'doughnut',
   data: {
-    labels: ['Jan', 'Feb', 'Mar'],
+    labels: labels,
     datasets: [{
       label: 'My First dataset',
       backgroundColor: ['#3e95cd', '#8e5ea2', '#3cba9f'],
-      borderColor: 'rgb(255, 99, 132)',
-      data: [15, 10, 5],
+      data: values,
     }]
   },
-  oprtions: {
-    animations: {
-      tension: {
-        duration: 1000,
-        easing: 'linear',
-        from: 1,
-        to: 0,
-        loop: true
-      }
-    },
-    scales: {
-      y: { // defining min and max so hiding the dataset does not change scale range
-        min: 0,
-        max: 100
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Project Statuses'
       }
     }
   }
 });
+
+// "[{"value": 1, "label": "COMPLETED"}, {"value": 2, "label": "INPROGRESS"}, {"value": 1, "label": "NOTSTARTED"}]"
+function decodeHthml(html) {
+  let txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
