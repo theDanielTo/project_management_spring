@@ -9,6 +9,7 @@ import com.dto.pma.dao.ProjectRepository;
 import com.dto.pma.dto.ChartData;
 import com.dto.pma.dto.EmployeeProject;
 import com.dto.pma.entities.Project;
+import com.dto.pma.springExample.Car;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
+
+  @Autowired
+  Car car;
 
   @Autowired
   ProjectRepository projRepo;
