@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProjectManagementSpringApplication {
 
 	@Autowired
-	EmployeeRepository empRepo;
+	EmployeeRepository empRepo; // inject interface to be used
 
 	@Autowired
 	ProjectRepository projRepo;
