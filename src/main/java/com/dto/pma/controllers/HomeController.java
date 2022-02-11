@@ -7,7 +7,6 @@ import com.dto.pma.dao.ProjectRepository;
 import com.dto.pma.dto.ChartData;
 import com.dto.pma.dto.EmployeeProject;
 import com.dto.pma.entities.Project;
-import com.dto.pma.springExample.Car;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -22,9 +21,6 @@ public class HomeController {
 
   @Value("${version}")
   private String ver;
-
-  @Autowired
-  Car car;
 
   @Autowired
   ProjectRepository projRepo;
