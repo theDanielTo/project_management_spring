@@ -1,32 +1,28 @@
 package com.dto.pma.services;
 
+import com.dto.pma.dao.EmployeeRepository;
+import com.dto.pma.dto.EmployeeProject;
+import com.dto.pma.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class EmployeeService {
 
-  // Field Injection
-  @Qualifier("staffRepositoryImpl1")
   @Autowired
-  IStaffRepository empRepo;
-  // EmployeeRepository empRepo;
+  EmployeeRepository empRepo;
 
-  // Constructor Injection
-  // public EmployeeService(EmployeeRepository empRepo) {
-  //   super();
-  //   this.empRepo = empRepo;
-  // }
-  // @Qualifier == @Primary (consumed first)
-  // public EmployeeService(IStaffRepository empRepo) {
-  //   super();
-  //   this.empRepo = empRepo;
-  // }
+  public Employee save(Employee employee) {
+    return empRepo.save(employee);
+  }
 
-  // Setter Injection
-  @Autowired
-  public void setEmpRepo(IStaffRepository empRepo) {
-    this.empRepo = empRepo;
+  public List<Employee> getAll() {
+    return empRepo.findAll();
+  }
+
+  public List<EmployeeProject> employeeProjects() {
+    return empRepo.employeeProjects();
   }
 }

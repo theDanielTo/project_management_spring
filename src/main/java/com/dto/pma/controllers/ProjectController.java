@@ -2,11 +2,11 @@ package com.dto.pma.controllers;
 
 import java.util.List;
 
-import com.dto.pma.dao.EmployeeRepository;
-import com.dto.pma.dao.ProjectRepository;
 import com.dto.pma.entities.Employee;
 import com.dto.pma.entities.Project;
 
+import com.dto.pma.services.EmployeeService;
+import com.dto.pma.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProjectController {
 
   @Autowired
-  ProjectRepository projRepo;
+  ProjectService projService;
 
   @Autowired
-  EmployeeRepository empRepo;
+  EmployeeService empService;
 
   @GetMapping
   public String displayProjectsList(Model model) {
-    List<Project> projects = projRepo.findAll();
+    List<Project> projects = projService.getAll();
     model.addAttribute("projectsList", projects);
     return "projects/projects-list";
   }
@@ -35,7 +35,7 @@ public class ProjectController {
   public String displayProjectForm(Model model) {
 
     Project aProject = new Project();
-    List<Employee> allEmployees = empRepo.findAll();
+    List<Employee> allEmployees = empService.getAll();
     model.addAttribute("project", aProject);
     model.addAttribute("allEmployees", allEmployees);
 
@@ -44,7 +44,7 @@ public class ProjectController {
 
   @PostMapping("/save")
   public String createProject(Project project, Model model) {
-    projRepo.save(project);
+    projService.save(project);
 
     // use a redirect to prevent duplicate submissions
     return "redirect:/projects";

@@ -5,6 +5,7 @@ import java.util.List;
 import com.dto.pma.dao.EmployeeRepository;
 import com.dto.pma.entities.Employee;
 
+import com.dto.pma.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,11 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EmployeeController {
 
   @Autowired
-  EmployeeRepository empRepo;
+  EmployeeService empService;
 
   @GetMapping
   public String displayProjectsList(Model model) {
-    List<Employee> employees = empRepo.findAll();
+    List<Employee> employees = empService.getAll();
     model.addAttribute("employeesList", employees);
     return "employees/employees-list";
   }
@@ -36,7 +37,7 @@ public class EmployeeController {
 
   @PostMapping("/save")
   public String createEmployee(Employee employee, Model model) {
-    empRepo.save(employee);
+    empService.save(employee);
 
     return "redirect:/employees";
   }
