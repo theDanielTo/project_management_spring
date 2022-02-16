@@ -1,14 +1,12 @@
 package com.dto.pma.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
 
@@ -19,16 +17,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     DataSource dataSource;
 
+    @Autowired
+    BCryptPasswordEncoder bCryptEncoder;
+
     // Authentication
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSource)
+        auth.jdbcAuthentication()
+                .dataSource(dataSource)
                 .usersByUsernameQuery(
                         "SELECT username, password, enabled " +
-                        "FROM users WHERE username = ?")
+                        "FROM user_accounts WHERE username = ?")
                 .authoritiesByUsernameQuery(
                         "SELECT username, authority " +
-                        "FROM authorities WHERE username = ?");
+                        "FROM user_accounts WHERE username = ?")
+                .passwordEncoder(bCryptEncoder);
 //                .withDefaultSchema()
 //                .withUser("myuser")
 //                    .password("pass")
@@ -43,21 +46,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //                    .roles("ADMIN");
     }
 
-    @Bean
-    public PasswordEncoder getPasswordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
-
     // Authorization
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/projects/new").hasRole("ADMIN")
+                .antMatchers("/projects/save").hasRole("ADMIN")
                 .antMatchers("/employees/new").hasRole("ADMIN")
-                .antMatchers("/h2_console/**").permitAll()
-                .antMatchers("/").authenticated().and().formLogin();
-
-        http.csrf().disable();
-        http.headers().frameOptions().disable();
+                .antMatchers("/employees/save").hasRole("ADMIN")
+                .antMatchers("/", "/**").permitAll()
+                .and()
+                .formLogin();
+        
     }
 }
