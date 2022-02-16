@@ -1,11 +1,8 @@
 package com.dto.pma.logging;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-//import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +23,7 @@ public class ApplicationLoggerAspect {
     }
 
     @Around("definePackagePointcuts()") // After=log shows after execution, Before=before execution, Around=
-    public Object logAround(ProceedingJoinPoint jp) { // ProceedingJoinPoint=
+    public Object logAround(ProceedingJoinPoint jp) { // joinpoint = point during the execution of the program
         log.debug(" \n \n \n ");
         log.debug("*************** Before Method Execution *************** \n {}. {} () with arguments[s] = {}",
                 jp.getSignature().getDeclaringTypeName(),
