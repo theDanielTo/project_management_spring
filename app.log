@@ -1,0 +1,144 @@
+2022-02-15 16:22:55.494  INFO 10004 --- [restartedMain] c.d.p.ProjectManagementSpringApplication : Starting ProjectManagementSpringApplication using Java 1.8.0_321 on DANIELS-PC with PID 10004 (C:\Users\dto19\repos\project-management-spring\target\classes started by SYSTEM in C:\Users\dto19\repos\project-management-spring)
+2022-02-15 16:22:55.496 DEBUG 10004 --- [restartedMain] c.d.p.ProjectManagementSpringApplication : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-15 16:22:55.496  INFO 10004 --- [restartedMain] c.d.p.ProjectManagementSpringApplication : The following profiles are active: dev
+2022-02-15 16:22:55.886  INFO 10004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-15 16:22:55.887  INFO 10004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-15 16:22:56.640  INFO 10004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-15 16:22:56.702  INFO 10004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2022-02-15 16:22:57.693  INFO 10004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-15 16:22:57.814  INFO 10004 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1926 ms
+2022-02-15 16:22:58.317  INFO 10004 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost/pmaSpringboot'
+2022-02-15 16:23:00.105  INFO 10004 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-15 16:23:00.662  WARN 10004 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-15 16:23:01.328  INFO 10004 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-15 16:23:01.366  INFO 10004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-15 16:23:01.383  INFO 10004 --- [restartedMain] c.d.p.ProjectManagementSpringApplication : Started ProjectManagementSpringApplication in 6.482 seconds (JVM running for 7.341)
+2022-02-15 16:23:08.808  INFO 10004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-15 16:23:08.809  INFO 10004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-15 16:23:08.847 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+ 
+2022-02-15 16:23:08.849 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : *************** Before Method Execution *************** 
+ com.dto.pma.controllers.HomeController. displayHome () with arguments[s] = [{}]
+2022-02-15 16:23:08.850 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+2022-02-15 16:23:09.180 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+2022-02-15 16:23:09.181 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : *************** After Method Execution *************** 
+ com.dto.pma.controllers.HomeController. displayHome () with arguments[s] = [{versionNumber=dev, projectsList=[com.dto.pma.entities.Project@443de3cf, com.dto.pma.entities.Project@1d0dac0d, com.dto.pma.entities.Project@3e3dde20, com.dto.pma.entities.Project@6f58038f], projectStatusCnt=[{"value":2,"label":"INPROGRESS"},{"value":1,"label":"COMPLETED"},{"value":1,"label":"NOTSTARTED"}], employeesProjectCount=[org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap@42e853d6, org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap@2959c0b9]}]
+2022-02-15 16:23:09.181 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+
+2022-02-15 16:23:12.861 DEBUG 10004 --- [http-nio-8080-exec-6] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+ 
+2022-02-15 16:23:12.862 DEBUG 10004 --- [http-nio-8080-exec-6] c.d.pma.logging.ApplicationLoggerAspect  : *************** Before Method Execution *************** 
+ com.dto.pma.controllers.HomeController. displayHome () with arguments[s] = [{}]
+2022-02-15 16:23:12.862 DEBUG 10004 --- [http-nio-8080-exec-6] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+2022-02-15 16:23:12.869 DEBUG 10004 --- [http-nio-8080-exec-6] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+2022-02-15 16:23:12.869 DEBUG 10004 --- [http-nio-8080-exec-6] c.d.pma.logging.ApplicationLoggerAspect  : *************** After Method Execution *************** 
+ com.dto.pma.controllers.HomeController. displayHome () with arguments[s] = [{versionNumber=dev, projectsList=[com.dto.pma.entities.Project@7105e380, com.dto.pma.entities.Project@37bcb214, com.dto.pma.entities.Project@403ef069, com.dto.pma.entities.Project@4f6dff41], projectStatusCnt=[{"value":2,"label":"INPROGRESS"},{"value":1,"label":"COMPLETED"},{"value":1,"label":"NOTSTARTED"}], employeesProjectCount=[org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap@5ed4429d, org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap@65b0e8b]}]
+2022-02-15 16:23:12.869 DEBUG 10004 --- [http-nio-8080-exec-6] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+
+2022-02-15 16:23:15.444 DEBUG 10004 --- [http-nio-8080-exec-9] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+ 
+2022-02-15 16:23:15.444 DEBUG 10004 --- [http-nio-8080-exec-9] c.d.pma.logging.ApplicationLoggerAspect  : *************** Before Method Execution *************** 
+ com.dto.pma.controllers.ProjectController. displayProjectsList () with arguments[s] = [{}]
+2022-02-15 16:23:15.444 DEBUG 10004 --- [http-nio-8080-exec-9] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+2022-02-15 16:23:15.457 DEBUG 10004 --- [http-nio-8080-exec-9] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+2022-02-15 16:23:15.458 DEBUG 10004 --- [http-nio-8080-exec-9] c.d.pma.logging.ApplicationLoggerAspect  : *************** After Method Execution *************** 
+ com.dto.pma.controllers.ProjectController. displayProjectsList () with arguments[s] = [{projectsList=[com.dto.pma.entities.Project@4a04a0ee, com.dto.pma.entities.Project@36279807, com.dto.pma.entities.Project@3e0f4c33, com.dto.pma.entities.Project@46dea210]}]
+2022-02-15 16:23:15.458 DEBUG 10004 --- [http-nio-8080-exec-9] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+
+2022-02-15 16:23:16.384 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+ 
+2022-02-15 16:23:16.384 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : *************** Before Method Execution *************** 
+ com.dto.pma.controllers.EmployeeController. displayProjectsList () with arguments[s] = [{}]
+2022-02-15 16:23:16.384 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+2022-02-15 16:23:16.396 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+2022-02-15 16:23:16.396 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : *************** After Method Execution *************** 
+ com.dto.pma.controllers.EmployeeController. displayProjectsList () with arguments[s] = [{employeesList=[com.dto.pma.entities.Employee@169dda05, com.dto.pma.entities.Employee@7b5257af]}]
+2022-02-15 16:23:16.397 DEBUG 10004 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+
+2022-02-15 16:26:47.950  INFO 10004 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-15 16:26:59.319  INFO 13524 --- [restartedMain] c.d.p.ProjectManagementSpringApplication : Starting ProjectManagementSpringApplication using Java 1.8.0_321 on DANIELS-PC with PID 13524 (C:\Users\dto19\repos\project-management-spring\target\classes started by SYSTEM in C:\Users\dto19\repos\project-management-spring)
+2022-02-15 16:26:59.320 DEBUG 13524 --- [restartedMain] c.d.p.ProjectManagementSpringApplication : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-15 16:26:59.321  INFO 13524 --- [restartedMain] c.d.p.ProjectManagementSpringApplication : The following profiles are active: dev
+2022-02-15 16:26:59.716  INFO 13524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-15 16:26:59.716  INFO 13524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-15 16:27:00.481  INFO 13524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-15 16:27:00.544  INFO 13524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2022-02-15 16:27:01.604  INFO 13524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-15 16:27:01.730  INFO 13524 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2012 ms
+2022-02-15 16:27:02.230  INFO 13524 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost/pmaSpringboot'
+2022-02-15 16:27:03.703  INFO 13524 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-15 16:27:04.371  WARN 13524 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-15 16:27:04.994  INFO 13524 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-15 16:27:05.029  INFO 13524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-15 16:27:05.040  INFO 13524 --- [restartedMain] c.d.p.ProjectManagementSpringApplication : Started ProjectManagementSpringApplication in 6.31 seconds (JVM running for 7.096)
+2022-02-15 16:27:11.172  INFO 13524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-15 16:27:11.176  INFO 13524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-02-15 16:27:11.283 DEBUG 13524 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+ 
+2022-02-15 16:27:11.285 DEBUG 13524 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : *************** Before Method Execution *************** 
+ com.dto.pma.controllers.EmployeeController. displayProjectsList () with arguments[s] = [{}]
+2022-02-15 16:27:11.287 DEBUG 13524 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+2022-02-15 16:27:11.647 DEBUG 13524 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+2022-02-15 16:27:11.647 DEBUG 13524 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : *************** After Method Execution *************** 
+ com.dto.pma.controllers.EmployeeController. displayProjectsList () with arguments[s] = [{employeesList=[com.dto.pma.entities.Employee@10c98a0f, com.dto.pma.entities.Employee@26f81a62]}]
+2022-02-15 16:27:11.647 DEBUG 13524 --- [http-nio-8080-exec-1] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+
+2022-02-15 16:27:13.610 DEBUG 13524 --- [http-nio-8080-exec-4] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+ 
+2022-02-15 16:27:13.611 DEBUG 13524 --- [http-nio-8080-exec-4] c.d.pma.logging.ApplicationLoggerAspect  : *************** Before Method Execution *************** 
+ com.dto.pma.controllers.HomeController. displayHome () with arguments[s] = [{}]
+2022-02-15 16:27:13.611 DEBUG 13524 --- [http-nio-8080-exec-4] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+2022-02-15 16:27:13.750 DEBUG 13524 --- [http-nio-8080-exec-4] c.d.pma.logging.ApplicationLoggerAspect  :  
+ 
+ 
+2022-02-15 16:27:13.751 DEBUG 13524 --- [http-nio-8080-exec-4] c.d.pma.logging.ApplicationLoggerAspect  : *************** After Method Execution *************** 
+ com.dto.pma.controllers.HomeController. displayHome () with arguments[s] = [{versionNumber=DEV, projectsList=[com.dto.pma.entities.Project@30a71aca, com.dto.pma.entities.Project@40b7a6e, com.dto.pma.entities.Project@61436768, com.dto.pma.entities.Project@4871decf], projectStatusCnt=[{"value":2,"label":"INPROGRESS"},{"value":1,"label":"COMPLETED"},{"value":1,"label":"NOTSTARTED"}], employeesProjectCount=[org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap@50d3a219, org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap@6337ef6f]}]
+2022-02-15 16:27:13.751 DEBUG 13524 --- [http-nio-8080-exec-4] c.d.pma.logging.ApplicationLoggerAspect  : _________________________________________________ 
+ 
+ 
+
+2022-02-15 16:27:25.766  INFO 13524 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
