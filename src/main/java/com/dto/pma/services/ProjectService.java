@@ -14,8 +14,8 @@ public class ProjectService {
     @Autowired
     ProjectRepository projRepo;
 
-    public Project save(Project project) {
-        return projRepo.save(project);
+    public void save(Project project) {
+        projRepo.save(project);
     }
 
     public List<Project> getAll() {
