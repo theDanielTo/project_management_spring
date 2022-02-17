@@ -29,7 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "SELECT username, password, enabled " +
                         "FROM user_accounts WHERE username = ?")
                 .authoritiesByUsernameQuery(
-                        "SELECT username, authority " +
+                        "SELECT username, role " +
                         "FROM user_accounts WHERE username = ?")
                 .passwordEncoder(bCryptEncoder);
 //                .withDefaultSchema()
@@ -50,9 +50,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/projects/new").hasRole("ADMIN")
+                .antMatchers("/projects/new").hasRole("ADMIN") // ROLE_ADMIN in db
                 .antMatchers("/projects/save").hasRole("ADMIN")
-                .antMatchers("/employees/new").hasRole("ADMIN")
+                .antMatchers("/employees/new").hasRole("ADMIN") // hasAuthority => ADMIN in db
                 .antMatchers("/employees/save").hasRole("ADMIN")
                 .antMatchers("/", "/**").permitAll()
                 .and()
