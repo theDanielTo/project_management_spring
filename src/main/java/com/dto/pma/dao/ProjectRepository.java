@@ -10,9 +10,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ProjectRepository extends CrudRepository<Project, Long> {
 
-  @Override
-  List<Project> findAll();
-
   @Query(nativeQuery=true,
     value="SELECT stage as label, COUNT(*) as value " +
       "FROM project " +

@@ -26,7 +26,7 @@ public class ProjectController {
 
   @GetMapping
   public String displayProjectsList(Model model) {
-    List<Project> projects = projService.getAll();
+    Iterable<Project> projects = projService.getAll();
     model.addAttribute("projectsList", projects);
     return "projects/projects-list";
   }

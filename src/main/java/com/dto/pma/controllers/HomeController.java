@@ -34,7 +34,7 @@ public class HomeController {
     model.addAttribute("versionNumber", ver);
 
     // querying the DB for projects & employees
-    List<Project> projects = projRepo.findAll();
+    Iterable<Project> projects = projRepo.findAll();
     model.addAttribute("projectsList", projects);
 
     List<ChartData> projectData = projRepo.getProjectStatus();
