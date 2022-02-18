@@ -21,5 +21,5 @@ public interface EmployeeRepository extends PagingAndSortingRepository<Employee,
 
   public Employee findByEmail(String value); // Spring knows what "findByX" does ==> queries X
 
-  public Employee findEmployeeByEmployeeId(long id); // same as findByEmployeeId
+  public Employee findByEmployeeId(long id); // same as findByEmployeeId
 }
