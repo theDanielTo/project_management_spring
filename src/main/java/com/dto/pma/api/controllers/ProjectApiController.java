@@ -37,22 +37,22 @@ public class ProjectApiController {
         return projRepo.save(project);
     }
 
-//    @PatchMapping(path="/{id}", consumes = "application/json")
-//    public Project partialUpdate(@PathVariable("id") long id, @RequestBody Project patchProject) {
-//        Project proj = projRepo.findById(id).get();
-//
-//        if (patchProject.getEmail() != null) {
-//            proj.setEmail(patchEmployee.getEmail());
-//        }
-//        if (patchProject.getFirstName() != null) {
-//            proj.setFirstName(patchEmployee.getFirstName());
-//        }
-//        if (patchProject.getEmail() != null) {
-//            proj.setLastName(patchEmployee.getLastName());
-//        }
-//
-//        return projRepo.save(emp);
-//    }
+    @PatchMapping(path="/{id}", consumes = "application/json")
+    public Project partialUpdate(@PathVariable("id") long id, @RequestBody Project patchProject) {
+        Project proj = projRepo.findById(id).get();
+
+        if (patchProject.getName() != null) {
+            proj.setName(patchProject.getName());
+        }
+        if (patchProject.getStage() != null) {
+            proj.setStage(patchProject.getStage());
+        }
+        if (patchProject.getDescription() != null) {
+            proj.setDescription(patchProject.getDescription());
+        }
+
+        return projRepo.save(proj);
+    }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

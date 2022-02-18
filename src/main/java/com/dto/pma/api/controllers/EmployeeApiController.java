@@ -46,7 +46,7 @@ public class EmployeeApiController {
         if (patchEmployee.getFirstName() != null) {
             emp.setFirstName(patchEmployee.getFirstName());
         }
-        if (patchEmployee.getEmail() != null) {
+        if (patchEmployee.getLastName() != null) {
             emp.setLastName(patchEmployee.getLastName());
         }
 
