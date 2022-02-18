@@ -1,5 +1,6 @@
 package com.dto.pma.entities;
 
+import com.dto.pma.validation.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import groovyjarjarantlr4.v4.runtime.misc.NotNull;
 import org.springframework.lang.NonNull;
@@ -28,7 +29,7 @@ public class Employee {
 
   @NotNull
   @Email
-  @Column(unique=true)
+  @UniqueValue
   private String email;
 
   @ManyToMany(

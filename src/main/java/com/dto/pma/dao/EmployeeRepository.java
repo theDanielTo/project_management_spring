@@ -16,4 +16,8 @@ public interface EmployeeRepository extends CrudRepository<Employee, Long> {
       "FROM employee e left join project_employee pe ON pe.employee_id=e.employee_id " +
       "GROUP BY e.first_name, e.last_name ORDER BY 3 DESC")
   List<EmployeeProject> employeeProjects();
+
+  public Employee findByEmail(String value); // Spring knows what "findByX" does ==> queries X
+
+  public Employee findEmployeeByEmployeeId(long id); // same as findByEmployeeId
 }
