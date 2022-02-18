@@ -7,7 +7,9 @@ import com.dto.pma.entities.Employee;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+@RepositoryRestResource(collectionResourceRel="apiemployees", path="apiemployees")
 public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long> {
 
   @Query(nativeQuery = true,
