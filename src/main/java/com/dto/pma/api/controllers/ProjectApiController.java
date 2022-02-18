@@ -8,6 +8,8 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/app-api/projects")
 public class ProjectApiController {
@@ -27,7 +29,7 @@ public class ProjectApiController {
 
     @PostMapping(consumes="application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public Project create(@RequestBody Project project) {
+    public Project create(@RequestBody @Valid Project project) {
         return projRepo.save(project);
     }
 
@@ -38,7 +40,7 @@ public class ProjectApiController {
     }
 
     @PatchMapping(path="/{id}", consumes = "application/json")
-    public Project partialUpdate(@PathVariable("id") long id, @RequestBody Project patchProject) {
+    public Project partialUpdate(@PathVariable("id") long id, @RequestBody @Valid Project patchProject) {
         Project proj = projRepo.findById(id).get();
 
         if (patchProject.getName() != null) {
