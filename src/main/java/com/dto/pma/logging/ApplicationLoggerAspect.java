@@ -24,12 +24,12 @@ public class ApplicationLoggerAspect {
 
     @Around("definePackagePointcuts()") // After=log shows after execution, Before=before execution, Around=
     public Object logAround(ProceedingJoinPoint jp) { // joinpoint = point during the execution of the program
-        log.debug(" \n \n \n ");
+        log.debug(" \n \n ");
         log.debug("*************** Before Method Execution *************** \n {}. {} () with arguments[s] = {}",
                 jp.getSignature().getDeclaringTypeName(),
                 jp.getSignature().getName(),
                 Arrays.toString(jp.getArgs()));
-        log.debug("_________________________________________________ \n \n ");
+        log.debug("_________________________________________________ \n ");
 
         Object o = null;
         try {
@@ -38,12 +38,12 @@ public class ApplicationLoggerAspect {
             e.printStackTrace();
         }
 
-        log.debug(" \n \n ");
+        log.debug(" \n ");
         log.debug("*************** After Method Execution *************** \n {}. {} () with arguments[s] = {}",
                 jp.getSignature().getDeclaringTypeName(),
                 jp.getSignature().getName(),
                 Arrays.toString(jp.getArgs()));
-        log.debug("_________________________________________________ \n \n \n");
+        log.debug("_________________________________________________ \n \n ");
 
         return o;
     }

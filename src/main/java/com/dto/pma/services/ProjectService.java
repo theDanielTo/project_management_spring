@@ -18,7 +18,7 @@ public class ProjectService {
         projRepo.save(project);
     }
 
-    public List<Project> getAll() {
+    public Iterable<Project> getAll() {
         return projRepo.findAll();
     }
 

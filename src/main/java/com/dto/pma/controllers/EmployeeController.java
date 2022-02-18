@@ -22,7 +22,7 @@ public class EmployeeController {
 
   @GetMapping
   public String displayProjectsList(Model model) {
-    List<Employee> employees = empService.getAll();
+    Iterable<Employee> employees = empService.getAll();
     model.addAttribute("employeesList", employees);
     return "employees/employees-list";
   }

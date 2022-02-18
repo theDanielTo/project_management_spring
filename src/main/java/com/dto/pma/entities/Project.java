@@ -1,5 +1,8 @@
 package com.dto.pma.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import groovyjarjarantlr4.v4.runtime.misc.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
  import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Project {
@@ -22,8 +26,15 @@ public class Project {
   @SequenceGenerator(name = "project_seq", sequenceName = "project_seq", allocationSize = 1, initialValue = 1)
   private long projectId;
 
+  @NotNull
+  @Size(min=1, max=50)
   private String name;
+
+  @NotNull
   private String stage;
+
+  @NotNull
+  @Size(min=1, max=100)
   private String description;
 
   @ManyToMany(
@@ -36,6 +47,7 @@ public class Project {
   @JoinTable(name="project_employee",
     joinColumns = @JoinColumn(name="project_id"),
     inverseJoinColumns = @JoinColumn(name="employee_id"))
+  @JsonIgnore
   private List<Employee> employees;
 
   public Project() { }

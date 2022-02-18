@@ -33,6 +33,6 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject = new Project("New Test Project", "COMPLETE", "Test Description");
         projRepo.save(newProject);
 
-        assertEquals(5, projRepo.findAll().size()); // 4 initial projects + 1 new project
+        assertEquals(5, projRepo.count()); // 4 initial projects + 1 new project
     }
 }

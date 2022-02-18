@@ -18,7 +18,7 @@ public class EmployeeService {
     empRepo.save(employee);
   }
 
-  public List<Employee> getAll() {
+  public Iterable<Employee> getAll() {
     return empRepo.findAll();
   }
 
