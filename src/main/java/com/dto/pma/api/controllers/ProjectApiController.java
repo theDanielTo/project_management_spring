@@ -1,10 +1,11 @@
 package com.dto.pma.api.controllers;
 
 import com.dto.pma.dao.ProjectRepository;
-import com.dto.pma.entities.Employee;
 import com.dto.pma.entities.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -62,7 +63,17 @@ public class ProjectApiController {
         try {
             projRepo.deleteById(id);
         } catch(EmptyResultDataAccessException ignored) {
-
+            // prevent exception
         }
+    }
+
+    // Pagination
+    // Get responses by page and size
+    @GetMapping(params = {"page", "size"})
+    @ResponseStatus(HttpStatus.OK)
+    public Iterable<Project> findPaginatedEmployees(@RequestParam("page") int page,
+                                                    @RequestParam("size") int size) {
+        Pageable pageAndSize = PageRequest.of(page, size);
+        return projRepo.findAll(pageAndSize);
     }
 }

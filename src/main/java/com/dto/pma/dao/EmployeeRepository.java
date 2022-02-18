@@ -6,9 +6,9 @@ import com.dto.pma.dto.EmployeeProject;
 import com.dto.pma.entities.Employee;
 
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface EmployeeRepository extends CrudRepository<Employee, Long> {
+public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long> {
 
   @Query(nativeQuery = true,
     value = "SELECT e.first_name AS firstName, e.last_name AS lastName, " +
