@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/projects")
@@ -47,6 +48,22 @@ public class ProjectController {
     projService.save(project);
 
     // use a redirect to prevent duplicate submissions
+    return "redirect:/projects";
+  }
+
+  @GetMapping("/update")
+  public String updateProject(@RequestParam("id") long id, Model model) {
+    Project project = projService.getById(id);
+    model.addAttribute("project", project);
+
+    return "projects/new-project";
+  }
+
+  @GetMapping("/delete")
+  public String deleteProject(@RequestParam("id") long id, Model model) {
+    Project project = projService.getById(id);
+    projService.delete(project);
+
     return "redirect:/projects";
   }
 }

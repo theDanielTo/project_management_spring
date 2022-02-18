@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="layouts :: html-header" />
+<head th:replace="layouts :: html-header"></head>
 
 <body>
   <nav th:replace="layouts :: navbar"></nav>
@@ -22,8 +22,8 @@
           </thead>
           <tbody>
             <tr th:each="aProject : ${projectsList}">
-              <td th:text="${aProject.name}" />
-              <td th:text="${aProject.Stage}" />
+              <td th:text="${aProject.name}"></td>
+              <td th:text="${aProject.Stage}"></td>
             </tr>
           </tbody>
         </table>
@@ -52,9 +52,9 @@
           </thead>
           <tbody>
             <tr th:each="anEmployeeProjectCount : ${employeesProjectCount}">
-              <td th:text="${anEmployeeProjectCount.firstName}" />
-              <td th:text="${anEmployeeProjectCount.lastName}" />
-              <td th:text="${anEmployeeProjectCount.projectCount}" />
+              <td th:text="${anEmployeeProjectCount.firstName}"></td>
+              <td th:text="${anEmployeeProjectCount.lastName}"></td>
+              <td th:text="${anEmployeeProjectCount.projectCount}"></td>
             </tr>
           </tbody>
         </table>
