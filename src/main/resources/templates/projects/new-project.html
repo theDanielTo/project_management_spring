@@ -12,6 +12,10 @@
 
       <div class="form-group row">
         <input type="text" placeholder="Project Name" th:field="${project.name}">
+        <span th:if="${#fields.hasErrors('name')}"
+              th:errors="${project.name}"
+              style="color:red;font-size:0.7em;">
+        </span>
       </div>
 
       <div class="form-group row">
@@ -23,7 +27,13 @@
       </div>
 
       <div class="form-group row">
-        <textarea placeholder="Enter Project Description" th:field="${project.description}"></textarea>
+        <textarea placeholder="Enter Project Description"
+                  th:field="${project.description}"
+                  rows="4" cols="30"></textarea>
+        <span th:if="${#fields.hasErrors('description')}"
+              th:errors="${project.description}"
+              style="color:red;font-size:0.7em;">
+        </span>
       </div>
 
       <div class="form-group row">

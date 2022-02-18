@@ -2,8 +2,6 @@ package com.dto.pma.entities;
 
 import com.dto.pma.validation.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import groovyjarjarantlr4.v4.runtime.misc.NotNull;
-import org.springframework.lang.NonNull;
 
 import java.util.List;
 
@@ -17,7 +15,7 @@ public class Employee {
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="employee_seq")
-  @SequenceGenerator(name="employee_seq", sequenceName="employee_seq", allocationSize = 1,initialValue = 1)
+  @SequenceGenerator(name="employee_seq", sequenceName="employee_seq", allocationSize = 1)
   private long employeeId;
 
   @NotBlank(message="*Please provide a first name")

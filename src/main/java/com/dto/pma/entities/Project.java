@@ -15,7 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
- import javax.persistence.SequenceGenerator;
+import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -26,15 +27,15 @@ public class Project {
   @SequenceGenerator(name = "project_seq", sequenceName = "project_seq", allocationSize = 1, initialValue = 1)
   private long projectId;
 
-  @NotNull
-  @Size(min=1, max=50)
+  @NotBlank(message="*Please provide a project name")
+  @Size(min=1, max=50, message="*Must be 1-50 characters")
   private String name;
 
   @NotNull
   private String stage;
 
-  @NotNull
-  @Size(min=1, max=100)
+  @NotBlank(message="*Please provide a project description")
+  @Size(min=1, max=100, message="*Must be 1-100 characters")
   private String description;
 
   @ManyToMany(

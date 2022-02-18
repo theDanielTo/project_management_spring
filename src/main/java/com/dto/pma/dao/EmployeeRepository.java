@@ -19,7 +19,7 @@ public interface EmployeeRepository extends PagingAndSortingRepository<Employee,
       "GROUP BY e.first_name, e.last_name ORDER BY 3 DESC")
   List<EmployeeProject> employeeProjects();
 
-  public Employee findByEmail(String value); // Spring knows what "findByX" does ==> queries X
+  Employee findByEmail(String value); // Spring knows what "findByX" does ==> queries X
 
-  public Employee findByEmployeeId(long id); // same as findByEmployeeId
+  Employee findByEmployeeId(long id); // same as findByEmployeeId
 }
