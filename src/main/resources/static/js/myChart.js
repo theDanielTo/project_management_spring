@@ -1,8 +1,8 @@
-let chartDataStr = decodeHtml(chartData);
-let chartJsonArray = JSON.parse(chartDataStr);
+var chartDataStr = decodeHtml(chartData);
+var chartJsonArray = JSON.parse(chartDataStr);
 
-let values = chartJsonArray.map(data => data.value);
-let labels = chartJsonArray.map(data => data.label);
+var values = chartJsonArray.map(data => data.value);
+var labels = chartJsonArray.map(data => data.label);
 
 new Chart(document.getElementById('myPieChart'), {
   type: 'doughnut',
@@ -26,7 +26,7 @@ new Chart(document.getElementById('myPieChart'), {
 
 // "[{"value": 1, "label": "COMPLETED"}, {"value": 2, "label": "INPROGRESS"}, {"value": 1, "label": "NOTSTARTED"}]"
 function decodeHtml(html) {
-  let txt = document.createElement("textarea");
+  var txt = document.createElement("textarea");
   txt.innerHTML = html;
   return txt.value;
 }

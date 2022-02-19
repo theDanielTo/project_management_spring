@@ -2,11 +2,14 @@ package com.dto.pma.controllers;
 
 import java.util.List;
 
+import com.dto.pma.dto.TimeChartData;
 import com.dto.pma.entities.Employee;
 import com.dto.pma.entities.Project;
 
 import com.dto.pma.services.EmployeeService;
 import com.dto.pma.services.ProjectService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -81,8 +84,17 @@ public class ProjectController {
     return "redirect:/projects";
   }
 
-  @GetMapping("/displayTimeLine")
-  public String displayProjectTimeline(Model model) {
-    return "";
+  @GetMapping("/timelines")
+  public String displayProjectTimelines(Model model) throws JsonProcessingException {
+
+    List<TimeChartData> timelineData = projService.getTimeData();
+
+    ObjectMapper objectMapper = new ObjectMapper();
+    String jsonStr = objectMapper.writeValueAsString(timelineData);
+    System.out.println("---------------- project timelines ----------------");
+    System.out.println(jsonStr);
+    model.addAttribute("projectTimeList", jsonStr);
+
+    return "projects/project-timelines";
   }
 }
