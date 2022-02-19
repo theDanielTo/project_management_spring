@@ -29,7 +29,7 @@ public class ApplicationLoggerAspect {
                 jp.getSignature().getDeclaringTypeName(),
                 jp.getSignature().getName(),
                 Arrays.toString(jp.getArgs()));
-        log.debug("_________________________________________________ \n ");
+        log.debug("_______________________________________________________ \n ");
 
         Object o = null;
         try {
@@ -43,7 +43,7 @@ public class ApplicationLoggerAspect {
                 jp.getSignature().getDeclaringTypeName(),
                 jp.getSignature().getName(),
                 Arrays.toString(jp.getArgs()));
-        log.debug("_________________________________________________ \n \n ");
+        log.debug("______________________________________________________ \n \n ");
 
         return o;
     }

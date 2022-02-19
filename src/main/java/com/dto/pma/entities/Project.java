@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import groovyjarjarantlr4.v4.runtime.misc.NotNull;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,7 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
- import javax.persistence.SequenceGenerator;
+import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -26,16 +28,20 @@ public class Project {
   @SequenceGenerator(name = "project_seq", sequenceName = "project_seq", allocationSize = 1, initialValue = 1)
   private long projectId;
 
-  @NotNull
-  @Size(min=1, max=50)
+  @NotBlank(message="*Please provide a project name")
+  @Size(min=1, max=50, message="*Must be 1-50 characters")
   private String name;
 
   @NotNull
   private String stage;
 
-  @NotNull
-  @Size(min=1, max=100)
+  @NotBlank(message="*Please provide a project description")
+  @Size(min=1, max=100, message="*Must be 1-100 characters")
   private String description;
+
+  private Date startDate;
+
+  private Date endDate;
 
   @ManyToMany(
     cascade = {
@@ -88,6 +94,10 @@ public class Project {
   public void setEmployees(List<Employee> employees) {
     this.employees = employees;
   }
+  public Date getStartDate() { return startDate; }
+  public void setStartDate(Date startDate) { this.startDate = startDate; }
+  public Date getEndDate() { return endDate; }
+  public void setEndDate(Date endDate) { this.endDate = endDate; }
 
   // convenience method
   public void addEmployee(Employee emp) {

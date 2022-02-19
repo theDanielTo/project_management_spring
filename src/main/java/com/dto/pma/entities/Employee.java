@@ -2,13 +2,12 @@ package com.dto.pma.entities;
 
 import com.dto.pma.validation.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import groovyjarjarantlr4.v4.runtime.misc.NotNull;
-import org.springframework.lang.NonNull;
 
 import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -16,19 +15,19 @@ public class Employee {
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="employee_seq")
-  @SequenceGenerator(name="employee_seq", sequenceName="employee_seq", allocationSize = 1,initialValue = 1)
+  @SequenceGenerator(name="employee_seq", sequenceName="employee_seq", allocationSize = 1)
   private long employeeId;
 
-  @NotNull
-  @Size(min=2, max=50)
+  @NotBlank(message="*Please provide a first name")
+  @Size(min=2, max=50, message="*Must be 2-50 characters")
   private String firstName;
 
-  @NotNull
-  @Size(min=1, max=50)
+  @NotBlank(message="*Please provide a last name")
+  @Size(min=1, max=50, message="*Must be 1-50 characters")
   private String lastName;
 
-  @NotNull
-  @Email
+  @NotBlank(message="*Please provide an email")
+  @Email(message="*Must be a valid email address")
   @UniqueValue
   private String email;
 

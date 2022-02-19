@@ -51,10 +51,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 //        http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/projects/new").hasRole("ADMIN") // ROLE_ADMIN in db
-                .antMatchers("/projects/save").hasRole("ADMIN")
-                .antMatchers("/employees/new").hasRole("ADMIN") // hasAuthority => ADMIN in db
-                .antMatchers("/employees/save").hasRole("ADMIN")
+//                .antMatchers("/projects/new").hasRole("ADMIN") // ROLE_ADMIN in db
+//                .antMatchers("/projects/save").hasRole("ADMIN")
+//                .antMatchers("/employees/new").hasRole("ADMIN") // hasAuthority => ADMIN in db
+//                .antMatchers("/employees/save").hasRole("ADMIN")
                 .antMatchers("/", "/**").permitAll()
                 .and()
                 .formLogin()
