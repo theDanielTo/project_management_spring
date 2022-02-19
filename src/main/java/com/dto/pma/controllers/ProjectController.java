@@ -80,4 +80,9 @@ public class ProjectController {
 
     return "redirect:/projects";
   }
+
+  @GetMapping("/displayTimeLine")
+  public String displayProjectTimeline(Model model) {
+    return "";
+  }
 }

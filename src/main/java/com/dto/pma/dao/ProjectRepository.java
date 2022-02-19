@@ -9,8 +9,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel="apiemployees", path="apiemployees")
+@RepositoryRestResource(collectionResourceRel="apiprojects", path="apiprojects")
 public interface ProjectRepository extends PagingAndSortingRepository<Project, Long> {
+
+  @Override
+  public List<Project> findAll();
 
   @Query(nativeQuery=true,
     value="SELECT stage as label, COUNT(*) as value " +

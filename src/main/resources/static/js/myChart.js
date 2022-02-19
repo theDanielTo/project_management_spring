@@ -1,4 +1,4 @@
-let chartDataStr = decodeHthml(chartData);
+let chartDataStr = decodeHtml(chartData);
 let chartJsonArray = JSON.parse(chartDataStr);
 
 let values = chartJsonArray.map(data => data.value);
@@ -25,7 +25,7 @@ new Chart(document.getElementById('myPieChart'), {
 });
 
 // "[{"value": 1, "label": "COMPLETED"}, {"value": 2, "label": "INPROGRESS"}, {"value": 1, "label": "NOTSTARTED"}]"
-function decodeHthml(html) {
+function decodeHtml(html) {
   let txt = document.createElement("textarea");
   txt.innerHTML = html;
   return txt.value;

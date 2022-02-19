@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import groovyjarjarantlr4.v4.runtime.misc.NotNull;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -37,6 +38,10 @@ public class Project {
   @NotBlank(message="*Please provide a project description")
   @Size(min=1, max=100, message="*Must be 1-100 characters")
   private String description;
+
+  private Date startDate;
+
+  private Date endDate;
 
   @ManyToMany(
     cascade = {
@@ -89,6 +94,10 @@ public class Project {
   public void setEmployees(List<Employee> employees) {
     this.employees = employees;
   }
+  public Date getStartDate() { return startDate; }
+  public void setStartDate(Date startDate) { this.startDate = startDate; }
+  public Date getEndDate() { return endDate; }
+  public void setEndDate(Date endDate) { this.endDate = endDate; }
 
   // convenience method
   public void addEmployee(Employee emp) {
